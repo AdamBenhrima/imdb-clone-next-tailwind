@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FiThumbsUp } from "react-icons/fi";
+import { AiFillStar } from "react-icons/ai";
 
 const getMovie = async (movieId) => {
   const res = await fetch(
@@ -11,6 +11,7 @@ const getMovie = async (movieId) => {
 const MoviePage = async ({ params }) => {
   const movieId = params.id;
   const movie = await getMovie(movieId);
+  console.log(movie);
   return (
     <section className="w-full">
       <article className="p-4 md:pt-8 flex flex-col md:flex-row items-center max-w-6xl mx-auto md:space-x-6 w-full">
@@ -39,9 +40,11 @@ const MoviePage = async ({ params }) => {
             {movie.release_date || movie.first_air_date}
           </p>
           <p className="mb-3 flex items-center">
-            <span className="font-semibold mr-1">Rating:</span>
-            <FiThumbsUp className="h-5 mr-1" />
-            <span className="text-amber-500">{movie.vote_count}</span>
+            <span className="font-semibold mr-1">Average Rating:</span>
+            <AiFillStar className=" text-amber-500 h-5 mr-1" />
+            <span className="text-amber-500">
+              {movie.vote_average.toFixed(2)}
+            </span>
           </p>
         </div>
       </article>
