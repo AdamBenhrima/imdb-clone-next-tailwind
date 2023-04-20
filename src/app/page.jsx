@@ -1,4 +1,4 @@
-import Results from "@/components/Results";
+import Card from "@/components/Card";
 
 const API_KEY = process.env.API_KEY;
 
@@ -20,8 +20,10 @@ export default async function Home({ searchParams }) {
   const results = data.results;
 
   return (
-    <main>
-      <Results results={results} />
+    <main className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-w-6xl mx-auto py-4">
+      {results.map((result) => (
+        <Card key={result.id} result={result} />
+      ))}
     </main>
   );
 }

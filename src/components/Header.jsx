@@ -11,7 +11,7 @@ const Header = () => {
         <MenuItem title="HOME" address="/" Icon={AiFillHome} />
         <MenuItem title="ABOUT" address="/about" Icon={BsFillInfoCircleFill} />
       </div>
-      <div className="flex items-center space-x-5">
+      <div className="flex items-center space-x-5 mr-2">
         <DarkModeSwitch />
         <Link href="/">
           <h2 className="text-2xl">
