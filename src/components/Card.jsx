@@ -16,7 +16,7 @@ const Card = ({ result }) => {
           className="sm:round-t-lg group-hover:opacity-80 transition-opacity duration-200"
           placeholder="blur"
           blurDataURL="/spinner.svg"
-          alt="Image is not available"
+          alt={`Poster for ${result.title || result.name}`}
         ></Image>
         <div className="p-2">
           <p className="line-clamp-2 text-md">{result.overview}</p>
