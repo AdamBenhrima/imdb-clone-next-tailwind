@@ -10,6 +10,7 @@ const SearchBox = () => {
     e.preventDefault();
     if (!search) return;
     router.push(`/search/${search}`);
+    setSearch("");
   };
   return (
     <form
